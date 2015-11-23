@@ -12,5 +12,11 @@
 
 @property (weak, nonatomic) IBOutlet UIView *mainView;
 @property (strong ,nonatomic) NSMutableArray *data;
+@property NSInteger index_row;
+
+-(void)initView;
+
+-(void)LeftAnimation;
+-(void)RightAnimation;
 
 @end

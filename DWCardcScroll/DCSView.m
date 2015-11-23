@@ -21,7 +21,7 @@
 }
 
 
--(void)layoutSubviews{
+-(void)initView{
     [super layoutSubviews];
     leftView = [[UIView alloc] initWithFrame:CGRectMake((-_mainView.frame.size.width + 10), _mainView.frame.origin.y + 15, _mainView.frame.size.width, _mainView.frame.size.height - 30)];
     leftView.backgroundColor = [UIColor lightGrayColor];
@@ -29,7 +29,20 @@
     rigthView = [[UIView alloc] initWithFrame:CGRectMake((_mainView.frame.size.width + 50), _mainView.frame.origin.y + 15, _mainView.frame.size.width, _mainView.frame.size.height - 30)];
     rigthView.backgroundColor = [UIColor lightGrayColor];
     [self addSubview:rigthView];
-    
+}
+
+
+-(void)LeftAnimation{
+    [UIView animateWithDuration:0.5 animations:^{
+        leftView.frame = CGRectMake(2 * ((-_mainView.frame.size.width + 10)), leftView.frame.origin.y, leftView.frame.size.width, leftView.frame.size.height);
+        _mainView.frame = CGRectMake((-_mainView.frame.size.width + 10), _mainView.frame.origin.y + 15, _mainView.frame.size.width, _mainView.frame.size.height - 30);
+        rigthView.frame = CGRectMake(30, rigthView.frame.origin.y - 15, _mainView.frame.size.width, _mainView.frame.size.height + 30);
+    }];
+}
+
+
+-(void)RightAnimation{
+
 }
 
 

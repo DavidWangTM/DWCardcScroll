@@ -23,13 +23,21 @@
     
     dcsview = [[[NSBundle mainBundle] loadNibNamed:@"DCSView" owner:self options:nil] firstObject];
     dcsview.frame = CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64);
+    [dcsview initView];
     [self.view addSubview:dcsview];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Onclick)];
+    [self.view addGestureRecognizer:tap];
     
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)Onclick{
+    [dcsview LeftAnimation];
 }
 
 @end
