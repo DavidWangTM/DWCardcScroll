@@ -1,0 +1,529 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84852FE21C03682100824FEF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84852FE11C03682100824FEF /* main.m */; };
+		84852FE51C03682100824FEF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84852FE41C03682100824FEF /* AppDelegate.m */; };
+		84852FE81C03682100824FEF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84852FE71C03682100824FEF /* ViewController.m */; };
+		84852FEB1C03682100824FEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84852FE91C03682100824FEF /* Main.storyboard */; };
+		84852FED1C03682100824FEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84852FEC1C03682100824FEF /* Assets.xcassets */; };
+		84852FF01C03682100824FEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84852FEE1C03682100824FEF /* LaunchScreen.storyboard */; };
+		84852FFB1C03682100824FEF /* DWCardcScrollTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84852FFA1C03682100824FEF /* DWCardcScrollTests.m */; };
+		848530061C03682100824FEF /* DWCardcScrollUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 848530051C03682100824FEF /* DWCardcScrollUITests.m */; };
+		848530151C03687A00824FEF /* DCSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848530141C03687A00824FEF /* DCSView.m */; };
+		848530171C03688400824FEF /* DCSView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848530161C03688400824FEF /* DCSView.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84852FF71C03682100824FEF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84852FD51C03682100824FEF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84852FDC1C03682100824FEF;
+			remoteInfo = DWCardcScroll;
+		};
+		848530021C03682100824FEF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84852FD51C03682100824FEF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84852FDC1C03682100824FEF;
+			remoteInfo = DWCardcScroll;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		84852FDD1C03682100824FEF /* DWCardcScroll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DWCardcScroll.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84852FE11C03682100824FEF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		84852FE31C03682100824FEF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		84852FE41C03682100824FEF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		84852FE61C03682100824FEF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		84852FE71C03682100824FEF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		84852FEA1C03682100824FEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84852FEC1C03682100824FEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84852FEF1C03682100824FEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84852FF11C03682100824FEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84852FF61C03682100824FEF /* DWCardcScrollTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DWCardcScrollTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84852FFA1C03682100824FEF /* DWCardcScrollTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWCardcScrollTests.m; sourceTree = "<group>"; };
+		84852FFC1C03682100824FEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		848530011C03682100824FEF /* DWCardcScrollUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DWCardcScrollUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		848530051C03682100824FEF /* DWCardcScrollUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWCardcScrollUITests.m; sourceTree = "<group>"; };
+		848530071C03682100824FEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		848530131C03687A00824FEF /* DCSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCSView.h; sourceTree = "<group>"; };
+		848530141C03687A00824FEF /* DCSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCSView.m; sourceTree = "<group>"; };
+		848530161C03688400824FEF /* DCSView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DCSView.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84852FDA1C03682100824FEF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84852FF31C03682100824FEF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84852FFE1C03682100824FEF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84852FD41C03682100824FEF = {
+			isa = PBXGroup;
+			children = (
+				84852FDF1C03682100824FEF /* DWCardcScroll */,
+				84852FF91C03682100824FEF /* DWCardcScrollTests */,
+				848530041C03682100824FEF /* DWCardcScrollUITests */,
+				84852FDE1C03682100824FEF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84852FDE1C03682100824FEF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84852FDD1C03682100824FEF /* DWCardcScroll.app */,
+				84852FF61C03682100824FEF /* DWCardcScrollTests.xctest */,
+				848530011C03682100824FEF /* DWCardcScrollUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84852FDF1C03682100824FEF /* DWCardcScroll */ = {
+			isa = PBXGroup;
+			children = (
+				84852FE31C03682100824FEF /* AppDelegate.h */,
+				84852FE41C03682100824FEF /* AppDelegate.m */,
+				84852FE61C03682100824FEF /* ViewController.h */,
+				84852FE71C03682100824FEF /* ViewController.m */,
+				848530131C03687A00824FEF /* DCSView.h */,
+				848530141C03687A00824FEF /* DCSView.m */,
+				848530161C03688400824FEF /* DCSView.xib */,
+				84852FE91C03682100824FEF /* Main.storyboard */,
+				84852FEC1C03682100824FEF /* Assets.xcassets */,
+				84852FEE1C03682100824FEF /* LaunchScreen.storyboard */,
+				84852FF11C03682100824FEF /* Info.plist */,
+				84852FE01C03682100824FEF /* Supporting Files */,
+			);
+			path = DWCardcScroll;
+			sourceTree = "<group>";
+		};
+		84852FE01C03682100824FEF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				84852FE11C03682100824FEF /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		84852FF91C03682100824FEF /* DWCardcScrollTests */ = {
+			isa = PBXGroup;
+			children = (
+				84852FFA1C03682100824FEF /* DWCardcScrollTests.m */,
+				84852FFC1C03682100824FEF /* Info.plist */,
+			);
+			path = DWCardcScrollTests;
+			sourceTree = "<group>";
+		};
+		848530041C03682100824FEF /* DWCardcScrollUITests */ = {
+			isa = PBXGroup;
+			children = (
+				848530051C03682100824FEF /* DWCardcScrollUITests.m */,
+				848530071C03682100824FEF /* Info.plist */,
+			);
+			path = DWCardcScrollUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84852FDC1C03682100824FEF /* DWCardcScroll */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8485300A1C03682100824FEF /* Build configuration list for PBXNativeTarget "DWCardcScroll" */;
+			buildPhases = (
+				84852FD91C03682100824FEF /* Sources */,
+				84852FDA1C03682100824FEF /* Frameworks */,
+				84852FDB1C03682100824FEF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DWCardcScroll;
+			productName = DWCardcScroll;
+			productReference = 84852FDD1C03682100824FEF /* DWCardcScroll.app */;
+			productType = "com.apple.product-type.application";
+		};
+		84852FF51C03682100824FEF /* DWCardcScrollTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8485300D1C03682100824FEF /* Build configuration list for PBXNativeTarget "DWCardcScrollTests" */;
+			buildPhases = (
+				84852FF21C03682100824FEF /* Sources */,
+				84852FF31C03682100824FEF /* Frameworks */,
+				84852FF41C03682100824FEF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84852FF81C03682100824FEF /* PBXTargetDependency */,
+			);
+			name = DWCardcScrollTests;
+			productName = DWCardcScrollTests;
+			productReference = 84852FF61C03682100824FEF /* DWCardcScrollTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		848530001C03682100824FEF /* DWCardcScrollUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 848530101C03682100824FEF /* Build configuration list for PBXNativeTarget "DWCardcScrollUITests" */;
+			buildPhases = (
+				84852FFD1C03682100824FEF /* Sources */,
+				84852FFE1C03682100824FEF /* Frameworks */,
+				84852FFF1C03682100824FEF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				848530031C03682100824FEF /* PBXTargetDependency */,
+			);
+			name = DWCardcScrollUITests;
+			productName = DWCardcScrollUITests;
+			productReference = 848530011C03682100824FEF /* DWCardcScrollUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84852FD51C03682100824FEF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = davidwang;
+				TargetAttributes = {
+					84852FDC1C03682100824FEF = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					84852FF51C03682100824FEF = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = 84852FDC1C03682100824FEF;
+					};
+					848530001C03682100824FEF = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = 84852FDC1C03682100824FEF;
+					};
+				};
+			};
+			buildConfigurationList = 84852FD81C03682100824FEF /* Build configuration list for PBXProject "DWCardcScroll" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84852FD41C03682100824FEF;
+			productRefGroup = 84852FDE1C03682100824FEF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84852FDC1C03682100824FEF /* DWCardcScroll */,
+				84852FF51C03682100824FEF /* DWCardcScrollTests */,
+				848530001C03682100824FEF /* DWCardcScrollUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84852FDB1C03682100824FEF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84852FF01C03682100824FEF /* LaunchScreen.storyboard in Resources */,
+				848530171C03688400824FEF /* DCSView.xib in Resources */,
+				84852FED1C03682100824FEF /* Assets.xcassets in Resources */,
+				84852FEB1C03682100824FEF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84852FF41C03682100824FEF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84852FFF1C03682100824FEF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84852FD91C03682100824FEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84852FE81C03682100824FEF /* ViewController.m in Sources */,
+				848530151C03687A00824FEF /* DCSView.m in Sources */,
+				84852FE51C03682100824FEF /* AppDelegate.m in Sources */,
+				84852FE21C03682100824FEF /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84852FF21C03682100824FEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84852FFB1C03682100824FEF /* DWCardcScrollTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84852FFD1C03682100824FEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				848530061C03682100824FEF /* DWCardcScrollUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84852FF81C03682100824FEF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84852FDC1C03682100824FEF /* DWCardcScroll */;
+			targetProxy = 84852FF71C03682100824FEF /* PBXContainerItemProxy */;
+		};
+		848530031C03682100824FEF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84852FDC1C03682100824FEF /* DWCardcScroll */;
+			targetProxy = 848530021C03682100824FEF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		84852FE91C03682100824FEF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84852FEA1C03682100824FEF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		84852FEE1C03682100824FEF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84852FEF1C03682100824FEF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		848530081C03682100824FEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		848530091C03682100824FEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8485300B1C03682100824FEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DWCardcScroll/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tm.davidwang.DWCardcScroll;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8485300C1C03682100824FEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DWCardcScroll/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tm.davidwang.DWCardcScroll;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8485300E1C03682100824FEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DWCardcScrollTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tm.davidwang.DWCardcScrollTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DWCardcScroll.app/DWCardcScroll";
+			};
+			name = Debug;
+		};
+		8485300F1C03682100824FEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DWCardcScrollTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tm.davidwang.DWCardcScrollTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DWCardcScroll.app/DWCardcScroll";
+			};
+			name = Release;
+		};
+		848530111C03682100824FEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DWCardcScrollUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tm.davidwang.DWCardcScrollUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DWCardcScroll;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		848530121C03682100824FEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DWCardcScrollUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tm.davidwang.DWCardcScrollUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DWCardcScroll;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84852FD81C03682100824FEF /* Build configuration list for PBXProject "DWCardcScroll" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				848530081C03682100824FEF /* Debug */,
+				848530091C03682100824FEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8485300A1C03682100824FEF /* Build configuration list for PBXNativeTarget "DWCardcScroll" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8485300B1C03682100824FEF /* Debug */,
+				8485300C1C03682100824FEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8485300D1C03682100824FEF /* Build configuration list for PBXNativeTarget "DWCardcScrollTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8485300E1C03682100824FEF /* Debug */,
+				8485300F1C03682100824FEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		848530101C03682100824FEF /* Build configuration list for PBXNativeTarget "DWCardcScrollUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				848530111C03682100824FEF /* Debug */,
+				848530121C03682100824FEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84852FD51C03682100824FEF /* Project object */;
+}
