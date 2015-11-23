@@ -11,8 +11,6 @@
 @implementation DCSView{
     UIView *leftView;
     UIView *rigthView;
-    CGRect left;
-    CGRect right;
 }
 
 
@@ -25,12 +23,11 @@
 
 -(void)layoutSubviews{
     [super layoutSubviews];
-    left = _mainView.frame;
-    left.origin.x = -(_mainView.frame.size.width + 20);
-    leftView.frame = left;
+    leftView = [[UIView alloc] initWithFrame:CGRectMake((-_mainView.frame.size.width + 10), _mainView.frame.origin.y + 15, _mainView.frame.size.width, _mainView.frame.size.height - 30)];
+    leftView.backgroundColor = [UIColor lightGrayColor];
     [self addSubview:leftView];
-    right = _mainView.frame;
-    right.origin.x = _mainView.frame.size.width + 30 + 20;
+    rigthView = [[UIView alloc] initWithFrame:CGRectMake((_mainView.frame.size.width + 50), _mainView.frame.origin.y + 15, _mainView.frame.size.width, _mainView.frame.size.height - 30)];
+    rigthView.backgroundColor = [UIColor lightGrayColor];
     [self addSubview:rigthView];
     
 }
