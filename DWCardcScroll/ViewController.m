@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "DCSView.h"
 
-@interface ViewController ()
+@interface ViewController (){
+    DCSView *dcsview;
+}
 
 @end
 
@@ -17,6 +20,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    dcsview = [[[NSBundle mainBundle] loadNibNamed:@"DCSView" owner:self options:nil] firstObject];
+    dcsview.frame = CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64);
+    [self.view addSubview:dcsview];
+    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -11,5 +11,6 @@
 @interface DCSView : UIView
 
 @property (weak, nonatomic) IBOutlet UIView *mainView;
+@property (strong ,nonatomic) NSMutableArray *data;
 
 @end
