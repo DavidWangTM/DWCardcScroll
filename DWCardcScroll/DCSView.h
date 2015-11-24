@@ -7,17 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddView.h"
 
+@protocol DCSViewDelegate <NSObject>
 
-@protocol DCSView <NSObject>
-
--(void)
+-(void)DCSViewReturn:(NSInteger) index;
 
 @end
 
 @interface DCSView : UIView
-
-@property (weak, nonatomic) IBOutlet UIView *mainView;
+@property (weak, nonatomic) id<DCSViewDelegate> delegate;
 @property (strong ,nonatomic) NSMutableArray *data;
 @property NSInteger index_row;
 

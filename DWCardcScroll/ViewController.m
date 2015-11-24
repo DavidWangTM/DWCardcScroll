@@ -7,10 +7,10 @@
 //
 
 #import "ViewController.h"
-#import "DCSView.h"
+#import "AddView.h"
 
 @interface ViewController (){
-    DCSView *dcsview;
+    NSMutableArray *data;
 }
 
 @end
@@ -20,24 +20,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
-    dcsview = [[[NSBundle mainBundle] loadNibNamed:@"DCSView" owner:self options:nil] firstObject];
-    dcsview.frame = CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64);
-    [dcsview initView];
-    [self.view addSubview:dcsview];
-    
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(Onclick)];
-    [self.view addGestureRecognizer:tap];
+    data = [NSMutableArray new];
+    for (int i =0 ; i< 10; i++) {
+        [data addObject:[NSString stringWithFormat:@"%d",i]];
+    }
+    _dcsview.data = data;
+    [_dcsview initView];
     
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
--(void)Onclick{
-//    [dcsview LeftAnimation];
 }
 
 @end

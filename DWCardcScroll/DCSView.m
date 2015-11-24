@@ -20,8 +20,9 @@
 @implementation DCSView{
     UIView *leftView;
     UIView *rigthView;
-    
+    NSInteger index;
     NSMutableArray *viewdata;
+    NSInteger type_index;
 }
 
 
@@ -33,8 +34,10 @@
 
 
 -(void)initView{
+    AddView *view;
+    type_index = 0;
     viewdata = [NSMutableArray new];
-    
+    index = 0;
     UISwipeGestureRecognizer *recognizer;
     recognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
     [recognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
@@ -42,17 +45,20 @@
     recognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
     [recognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
     [self addGestureRecognizer:recognizer];
-    
-    UIView *view;
     for (int i = 0; i < 3; i++) {
+        view = [[[NSBundle mainBundle] loadNibNamed:@"AddView" owner:self options:nil] firstObject];
         if (i == 0) {
-            view = [[UIView alloc] initWithFrame:CGRectMake((-SCREENWITH + 2*PADING_LEFT_RIGHT +PADING_SHOW), PADING_TOP, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_HEIGHT)];
+            view.frame = CGRectMake((-SCREENWITH + 2*PADING_LEFT_RIGHT +PADING_SHOW), PADING_TOP, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_HEIGHT);
         }else if (i == 1){
-            view = [[UIView alloc] initWithFrame:CGRectMake(PADING_LEFT_RIGHT, 0, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_BOTTOM)];
+            view.frame = CGRectMake(PADING_LEFT_RIGHT, 0, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_BOTTOM);
         }else if (i == 2){
-            view = [[UIView alloc] initWithFrame:CGRectMake((SCREENWITH - PADING_LEFT_RIGHT + (PADING_LEFT_RIGHT - PADING_SHOW)), PADING_TOP, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_HEIGHT)];
+            view.frame = CGRectMake((SCREENWITH - PADING_LEFT_RIGHT + (PADING_LEFT_RIGHT - PADING_SHOW)), PADING_TOP, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_HEIGHT);
         }
-        view.backgroundColor = [UIColor lightGrayColor];
+        NSInteger num = i - 1;
+        if (num < 0) {
+            num = _data.count - 1;
+        }
+        [view ChangeData:[_data objectAtIndex:num]];
         view.layer.cornerRadius = 5.0;
         view.clipsToBounds = YES;
         [self addSubview:view];
@@ -61,9 +67,18 @@
 }
 
 -(void)LeftAnimation{
-    UIView *view = [viewdata objectAtIndex:0];
-    UIView *view1 = [viewdata objectAtIndex:1];
-    UIView *view2 = [viewdata objectAtIndex:2];
+    if (type_index == 2) {
+        index -- ;
+    }
+    type_index = 1;
+    index ++;
+    if (index >= (_data.count - 1)) {
+        index = -1;
+    }
+    NSLog(@"%ld",index);
+    AddView *view = [viewdata objectAtIndex:0];
+    AddView *view1 = [viewdata objectAtIndex:1];
+    AddView *view2 = [viewdata objectAtIndex:2];
     [viewdata removeObjectAtIndex:0];
     [UIView animateWithDuration:0.25 animations:^{
         view.frame = CGRectMake(2 *(-SCREENWITH + 2*PADING_LEFT_RIGHT +PADING_SHOW), PADING_TOP, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_HEIGHT);
@@ -72,6 +87,7 @@
         [UIView animateWithDuration:0.25 animations:^{
             view.frame = CGRectMake((SCREENWITH - PADING_LEFT_RIGHT + (PADING_LEFT_RIGHT - PADING_SHOW)), PADING_TOP, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_HEIGHT);
         }];
+        [view ChangeData:[_data objectAtIndex:(index + 1)]];
         [viewdata addObject:view];
     }];
     [UIView animateWithDuration:0.5 animations:^{
@@ -82,9 +98,18 @@
 
 
 -(void)RightAnimation{
-    UIView *view = [viewdata objectAtIndex:0];
-    UIView *view1 = [viewdata objectAtIndex:1];
-    UIView *view2 = [viewdata objectAtIndex:2];
+    if (type_index == 1) {
+        index ++ ;
+    }
+    type_index = 2;
+    index -- ;
+    if (index <= 0) {
+        index = _data.count ;
+    }
+    NSLog(@"%ld",index);
+    AddView *view = [viewdata objectAtIndex:0];
+    AddView *view1 = [viewdata objectAtIndex:1];
+    AddView *view2 = [viewdata objectAtIndex:2];
     [viewdata removeObjectAtIndex:2];
     [UIView animateWithDuration:0.25 animations:^{
         view2.frame = CGRectMake(2 *(SCREENWITH - PADING_LEFT_RIGHT + (PADING_LEFT_RIGHT - PADING_SHOW)), PADING_TOP, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_HEIGHT);
@@ -93,6 +118,7 @@
         [UIView animateWithDuration:0.25 animations:^{
             view2.frame = CGRectMake((-SCREENWITH + 2*PADING_LEFT_RIGHT +PADING_SHOW), PADING_TOP, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_HEIGHT);
         }];
+        [view ChangeData:[_data objectAtIndex:(index - 1)]];
         [viewdata insertObject:view2 atIndex:0];
     }];
     
@@ -100,8 +126,6 @@
         view.frame = CGRectMake(PADING_LEFT_RIGHT, 0, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_BOTTOM);
         view1.frame = CGRectMake((SCREENWITH - PADING_LEFT_RIGHT + (PADING_LEFT_RIGHT - PADING_SHOW)), PADING_TOP, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_HEIGHT);
     }];
-    
-    
     
 }
 

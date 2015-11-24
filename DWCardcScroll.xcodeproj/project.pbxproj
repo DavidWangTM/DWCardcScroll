@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		212101241C03FEAE0045AE0B /* AddView.m in Sources */ = {isa = PBXBuildFile; fileRef = 212101231C03FEAE0045AE0B /* AddView.m */; };
+		212101261C03FEBC0045AE0B /* AddView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 212101251C03FEBC0045AE0B /* AddView.xib */; };
 		84852FE21C03682100824FEF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84852FE11C03682100824FEF /* main.m */; };
 		84852FE51C03682100824FEF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84852FE41C03682100824FEF /* AppDelegate.m */; };
 		84852FE81C03682100824FEF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84852FE71C03682100824FEF /* ViewController.m */; };
@@ -16,7 +18,6 @@
 		84852FFB1C03682100824FEF /* DWCardcScrollTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84852FFA1C03682100824FEF /* DWCardcScrollTests.m */; };
 		848530061C03682100824FEF /* DWCardcScrollUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 848530051C03682100824FEF /* DWCardcScrollUITests.m */; };
 		848530151C03687A00824FEF /* DCSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848530141C03687A00824FEF /* DCSView.m */; };
-		848530171C03688400824FEF /* DCSView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 848530161C03688400824FEF /* DCSView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		212101221C03FEAE0045AE0B /* AddView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddView.h; sourceTree = "<group>"; };
+		212101231C03FEAE0045AE0B /* AddView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddView.m; sourceTree = "<group>"; };
+		212101251C03FEBC0045AE0B /* AddView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddView.xib; sourceTree = "<group>"; };
 		84852FDD1C03682100824FEF /* DWCardcScroll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DWCardcScroll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84852FE11C03682100824FEF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		84852FE31C03682100824FEF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -55,7 +59,6 @@
 		848530071C03682100824FEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		848530131C03687A00824FEF /* DCSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCSView.h; sourceTree = "<group>"; };
 		848530141C03687A00824FEF /* DCSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCSView.m; sourceTree = "<group>"; };
-		848530161C03688400824FEF /* DCSView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DCSView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +115,9 @@
 				84852FE71C03682100824FEF /* ViewController.m */,
 				848530131C03687A00824FEF /* DCSView.h */,
 				848530141C03687A00824FEF /* DCSView.m */,
-				848530161C03688400824FEF /* DCSView.xib */,
+				212101221C03FEAE0045AE0B /* AddView.h */,
+				212101231C03FEAE0045AE0B /* AddView.m */,
+				212101251C03FEBC0045AE0B /* AddView.xib */,
 				84852FE91C03682100824FEF /* Main.storyboard */,
 				84852FEC1C03682100824FEF /* Assets.xcassets */,
 				84852FEE1C03682100824FEF /* LaunchScreen.storyboard */,
@@ -251,8 +256,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				212101261C03FEBC0045AE0B /* AddView.xib in Resources */,
 				84852FF01C03682100824FEF /* LaunchScreen.storyboard in Resources */,
-				848530171C03688400824FEF /* DCSView.xib in Resources */,
 				84852FED1C03682100824FEF /* Assets.xcassets in Resources */,
 				84852FEB1C03682100824FEF /* Main.storyboard in Resources */,
 			);
@@ -281,6 +286,7 @@
 			files = (
 				84852FE81C03682100824FEF /* ViewController.m in Sources */,
 				848530151C03687A00824FEF /* DCSView.m in Sources */,
+				212101241C03FEAE0045AE0B /* AddView.m in Sources */,
 				84852FE51C03682100824FEF /* AppDelegate.m in Sources */,
 				84852FE21C03682100824FEF /* main.m in Sources */,
 			);

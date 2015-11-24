@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DCSView.h"
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet DCSView *dcsview;
 
 @end
 
