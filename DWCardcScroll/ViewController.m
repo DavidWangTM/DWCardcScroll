@@ -37,7 +37,7 @@
 }
 
 -(void)Onclick{
-    [dcsview LeftAnimation];
+//    [dcsview LeftAnimation];
 }
 
 @end

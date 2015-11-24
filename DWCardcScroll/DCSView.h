@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+
+@protocol DCSView <NSObject>
+
+-(void)
+
+@end
+
 @interface DCSView : UIView
 
 @property (weak, nonatomic) IBOutlet UIView *mainView;

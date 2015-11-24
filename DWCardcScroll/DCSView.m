@@ -34,6 +34,15 @@
 
 -(void)initView{
     viewdata = [NSMutableArray new];
+    
+    UISwipeGestureRecognizer *recognizer;
+    recognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
+    [recognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
+    [self addGestureRecognizer:recognizer];
+    recognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
+    [recognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
+    [self addGestureRecognizer:recognizer];
+    
     UIView *view;
     for (int i = 0; i < 3; i++) {
         if (i == 0) {
@@ -44,6 +53,8 @@
             view = [[UIView alloc] initWithFrame:CGRectMake((SCREENWITH - PADING_LEFT_RIGHT + (PADING_LEFT_RIGHT - PADING_SHOW)), PADING_TOP, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_HEIGHT)];
         }
         view.backgroundColor = [UIColor lightGrayColor];
+        view.layer.cornerRadius = 5.0;
+        view.clipsToBounds = YES;
         [self addSubview:view];
         [viewdata addObject:view];
     }
@@ -51,31 +62,60 @@
 
 -(void)LeftAnimation{
     UIView *view = [viewdata objectAtIndex:0];
+    UIView *view1 = [viewdata objectAtIndex:1];
+    UIView *view2 = [viewdata objectAtIndex:2];
     [viewdata removeObjectAtIndex:0];
     [UIView animateWithDuration:0.25 animations:^{
         view.frame = CGRectMake(2 *(-SCREENWITH + 2*PADING_LEFT_RIGHT +PADING_SHOW), PADING_TOP, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_HEIGHT);
     } completion:^(BOOL finished) {
         view.frame = CGRectMake(2 *(SCREENWITH - PADING_LEFT_RIGHT + (PADING_LEFT_RIGHT - PADING_SHOW)), PADING_TOP, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_HEIGHT);
-        [viewdata addObject:view];
         [UIView animateWithDuration:0.25 animations:^{
             view.frame = CGRectMake((SCREENWITH - PADING_LEFT_RIGHT + (PADING_LEFT_RIGHT - PADING_SHOW)), PADING_TOP, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_HEIGHT);
         }];
+        [viewdata addObject:view];
     }];
-    
     [UIView animateWithDuration:0.5 animations:^{
-        UIView *view = [viewdata objectAtIndex:0];
-        UIView *view1 = [viewdata objectAtIndex:1];
-        view.frame = CGRectMake((-SCREENWITH + 2*PADING_LEFT_RIGHT +PADING_SHOW), PADING_TOP, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_HEIGHT);
-        view1.frame = CGRectMake(PADING_LEFT_RIGHT, 0, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_BOTTOM);
-        
+        view1.frame = CGRectMake((-SCREENWITH + 2*PADING_LEFT_RIGHT +PADING_SHOW), PADING_TOP, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_HEIGHT);
+        view2.frame = CGRectMake(PADING_LEFT_RIGHT, 0, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_BOTTOM);
     }];
 }
 
 
 -(void)RightAnimation{
-
+    UIView *view = [viewdata objectAtIndex:0];
+    UIView *view1 = [viewdata objectAtIndex:1];
+    UIView *view2 = [viewdata objectAtIndex:2];
+    [viewdata removeObjectAtIndex:2];
+    [UIView animateWithDuration:0.25 animations:^{
+        view2.frame = CGRectMake(2 *(SCREENWITH - PADING_LEFT_RIGHT + (PADING_LEFT_RIGHT - PADING_SHOW)), PADING_TOP, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_HEIGHT);
+    } completion:^(BOOL finished) {
+        view2.frame = CGRectMake(2 *(-SCREENWITH + 2*PADING_LEFT_RIGHT +PADING_SHOW), PADING_TOP, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_HEIGHT);
+        [UIView animateWithDuration:0.25 animations:^{
+            view2.frame = CGRectMake((-SCREENWITH + 2*PADING_LEFT_RIGHT +PADING_SHOW), PADING_TOP, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_HEIGHT);
+        }];
+        [viewdata insertObject:view2 atIndex:0];
+    }];
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        view.frame = CGRectMake(PADING_LEFT_RIGHT, 0, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_BOTTOM);
+        view1.frame = CGRectMake((SCREENWITH - PADING_LEFT_RIGHT + (PADING_LEFT_RIGHT - PADING_SHOW)), PADING_TOP, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_HEIGHT);
+    }];
+    
+    
+    
 }
 
-
+-(void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer{
+    
+    if(recognizer.direction==UISwipeGestureRecognizerDirectionLeft) {
+        [self LeftAnimation];
+    }
+    
+    if(recognizer.direction==UISwipeGestureRecognizerDirectionRight) {
+        //执行程序
+        [self RightAnimation];
+    }
+    
+}
 
 @end
