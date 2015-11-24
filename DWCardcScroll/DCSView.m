@@ -8,9 +8,20 @@
 
 #import "DCSView.h"
 
+#define PADING_TOP 15
+#define PADING_SHOW 10
+#define PADING_LEFT_RIGHT 30
+#define PADING_HEIGHT 50
+#define PADING_BOTTOM 20
+
+#define SCREENWITH   [UIScreen mainScreen].bounds.size.width
+#define SCREENHEIGHT [UIScreen mainScreen].bounds.size.height
+
 @implementation DCSView{
     UIView *leftView;
     UIView *rigthView;
+    
+    NSMutableArray *viewdata;
 }
 
 
@@ -22,21 +33,41 @@
 
 
 -(void)initView{
-    [super layoutSubviews];
-    leftView = [[UIView alloc] initWithFrame:CGRectMake((-_mainView.frame.size.width + 10), _mainView.frame.origin.y + 15, _mainView.frame.size.width, _mainView.frame.size.height - 30)];
-    leftView.backgroundColor = [UIColor lightGrayColor];
-    [self addSubview:leftView];
-    rigthView = [[UIView alloc] initWithFrame:CGRectMake((_mainView.frame.size.width + 50), _mainView.frame.origin.y + 15, _mainView.frame.size.width, _mainView.frame.size.height - 30)];
-    rigthView.backgroundColor = [UIColor lightGrayColor];
-    [self addSubview:rigthView];
+    viewdata = [NSMutableArray new];
+    UIView *view;
+    for (int i = 0; i < 3; i++) {
+        if (i == 0) {
+            view = [[UIView alloc] initWithFrame:CGRectMake((-SCREENWITH + 2*PADING_LEFT_RIGHT +PADING_SHOW), PADING_TOP, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_HEIGHT)];
+        }else if (i == 1){
+            view = [[UIView alloc] initWithFrame:CGRectMake(PADING_LEFT_RIGHT, 0, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_BOTTOM)];
+        }else if (i == 2){
+            view = [[UIView alloc] initWithFrame:CGRectMake((SCREENWITH - PADING_LEFT_RIGHT + (PADING_LEFT_RIGHT - PADING_SHOW)), PADING_TOP, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_HEIGHT)];
+        }
+        view.backgroundColor = [UIColor lightGrayColor];
+        [self addSubview:view];
+        [viewdata addObject:view];
+    }
 }
 
-
 -(void)LeftAnimation{
+    UIView *view = [viewdata objectAtIndex:0];
+    [viewdata removeObjectAtIndex:0];
+    [UIView animateWithDuration:0.25 animations:^{
+        view.frame = CGRectMake(2 *(-SCREENWITH + 2*PADING_LEFT_RIGHT +PADING_SHOW), PADING_TOP, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_HEIGHT);
+    } completion:^(BOOL finished) {
+        view.frame = CGRectMake(2 *(SCREENWITH - PADING_LEFT_RIGHT + (PADING_LEFT_RIGHT - PADING_SHOW)), PADING_TOP, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_HEIGHT);
+        [viewdata addObject:view];
+        [UIView animateWithDuration:0.25 animations:^{
+            view.frame = CGRectMake((SCREENWITH - PADING_LEFT_RIGHT + (PADING_LEFT_RIGHT - PADING_SHOW)), PADING_TOP, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_HEIGHT);
+        }];
+    }];
+    
     [UIView animateWithDuration:0.5 animations:^{
-        leftView.frame = CGRectMake(2 * ((-_mainView.frame.size.width + 10)), leftView.frame.origin.y, leftView.frame.size.width, leftView.frame.size.height);
-        _mainView.frame = CGRectMake((-_mainView.frame.size.width + 10), _mainView.frame.origin.y + 15, _mainView.frame.size.width, _mainView.frame.size.height - 30);
-        rigthView.frame = CGRectMake(30, rigthView.frame.origin.y - 15, _mainView.frame.size.width, _mainView.frame.size.height + 30);
+        UIView *view = [viewdata objectAtIndex:0];
+        UIView *view1 = [viewdata objectAtIndex:1];
+        view.frame = CGRectMake((-SCREENWITH + 2*PADING_LEFT_RIGHT +PADING_SHOW), PADING_TOP, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_HEIGHT);
+        view1.frame = CGRectMake(PADING_LEFT_RIGHT, 0, SCREENWITH - 2*PADING_LEFT_RIGHT, self.frame.size.height - PADING_BOTTOM);
+        
     }];
 }
 
